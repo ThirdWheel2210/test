@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+    <book id="1">
+        <title>Java Programming</title>
+        <author>John Doe</author>
+        <genre>Programming</genre>
+        <year>2022</year>
+    </book>
+    <book id="2">
+        <title>XML and Java</title>
+        <author>Jane Smith</author>
+        <genre>Technical</genre>
+        <year>2021</year>
+    </book>
+</library>
