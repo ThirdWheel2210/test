@@ -1,0 +1,36 @@
+<project name="LR7" default="run" basedir=".">
+    <!-- Установка путей -->
+    <property name="src.dir" value="src"/>
+    <property name="build.dir" value="build"/>
+    <property name="classes.dir" value="${build.dir}/classes"/>
+    <property name="libs.dir" value="libs"/>
+
+    <!-- Очистка предыдущих сборок -->
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+    </target>
+
+    <!-- Создание необходимых директорий -->
+    <target name="init">
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${classes.dir}"/>
+    </target>
+
+    <!-- Компиляция Java-файлов -->
+    <target name="compile" depends="clean, init">
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" includeantruntime="false">
+            <classpath>
+                <fileset dir="${libs.dir}" includes="*.jar"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <!-- Запуск программы -->
+    <target name="run" depends="compile">
+        <java classname="XSLTTransformer" fork="true">
+            <classpath>
+                <pathelement path="${classes.dir}"/>
+            </classpath>
+        </java>
+    </target>
+</project>
