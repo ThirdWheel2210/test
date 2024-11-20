@@ -3,7 +3,6 @@
     <property name="src.dir" value="src"/>
     <property name="build.dir" value="build"/>
     <property name="classes.dir" value="${build.dir}/classes"/>
-    <property name="libs.dir" value="libs"/>
 
     <!-- Очистка предыдущих сборок -->
     <target name="clean">
@@ -20,7 +19,7 @@
     <target name="compile" depends="clean, init">
         <javac srcdir="${src.dir}" destdir="${classes.dir}" includeantruntime="false">
             <classpath>
-                <fileset dir="${libs.dir}" includes="*.jar"/>
+
             </classpath>
         </javac>
     </target>
